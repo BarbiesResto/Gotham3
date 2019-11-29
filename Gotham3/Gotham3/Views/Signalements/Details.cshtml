@@ -1,0 +1,42 @@
+﻿@model Gotham3.Models.Signalement
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Signalement</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Nature de l'évènement
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Event_Nature)
+        </dd>
+        <dt class = "col-sm-2">
+            Secteur
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sector)
+        </dd>
+        <dt class = "col-sm-2">
+            Heure
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Time)
+        </dd>
+        <dt class = "col-sm-2">
+            Commentaire(s)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Comment)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Delete" asp-route-id="@Model.Id">Supprimer</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
