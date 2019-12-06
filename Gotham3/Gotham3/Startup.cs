@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Gotham3.Data;
 using Gotham3.Models;
+using Gotham3.Data.Mocks;
 
 namespace Gotham3
 {
@@ -31,7 +32,8 @@ namespace Gotham3
             services.AddDbContext<Gotham3Context>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("Gotham3Context")), ServiceLifetime.Transient);
 
-            services.AddSingleton<IRepository<Signalement>, Gotham3Repository<Signalement>>();
+            //services.AddSingleton<IRepository<Signalement>, Gotham3Repository<Signalement>>();
+            services.AddSingleton<IRepository<Signalement>, MockSignalementsRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gotham3", "Gotham3\Gotham3.csproj", "{7A7AA0B7-A550-4D57-9F17-EA6BF8539556}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gotham3", "Gotham3\Gotham3.csproj", "{7A7AA0B7-A550-4D57-9F17-EA6BF8539556}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gotham3.UnitTests", "Gotham3.UnitTests\Gotham3.UnitTests.csproj", "{15ED3330-E92B-4207-B502-54D1A2D9DC9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gotham3.UnitTests", "Gotham3.UnitTests\Gotham3.UnitTests.csproj", "{15ED3330-E92B-4207-B502-54D1A2D9DC9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gotham3.AcceptanceTests", "Gotham3.AcceptanceTests\Gotham3.AcceptanceTests.csproj", "{EEB48978-3E12-48B8-9666-0B13620F6D06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gotham3.AcceptanceTests", "Gotham3.AcceptanceTests\Gotham3.AcceptanceTests.csproj", "{EEB48978-3E12-48B8-9666-0B13620F6D06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gotham3.InterfaceTests", "Gotham3.InterfaceTests\Gotham3.InterfaceTests.csproj", "{B0C1186D-A51E-467D-943B-C6E22BDF8669}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{EEB48978-3E12-48B8-9666-0B13620F6D06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEB48978-3E12-48B8-9666-0B13620F6D06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEB48978-3E12-48B8-9666-0B13620F6D06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0C1186D-A51E-467D-943B-C6E22BDF8669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0C1186D-A51E-467D-943B-C6E22BDF8669}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0C1186D-A51E-467D-943B-C6E22BDF8669}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0C1186D-A51E-467D-943B-C6E22BDF8669}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
