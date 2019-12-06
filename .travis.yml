@@ -1,10 +1,10 @@
 language: csharp
 branches:
   only:
-    - Dev
+    - Staging
 mono: none
 dotnet: 3.0
+services:
+  - docker
 script:
   - dotnet build ./Gotham3/Gotham3
-  - dotnet build ./Gotham3/Gotham3.UnitTests
-  - dotnet test ./Gotham3/Gotham3.UnitTests
