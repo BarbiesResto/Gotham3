@@ -1,5 +1,6 @@
-using Gotham3.Data.Mocks;
-using Gotham3.Models;
+
+using Gotham3.domain;
+using Gotham3.persistence.Mocks;
 using System;
 using System.Linq;
 using System.Threading.Tasks;

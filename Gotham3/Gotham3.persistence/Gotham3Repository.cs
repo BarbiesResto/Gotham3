@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Gotham3.domain;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Gotham3.Data
+namespace Gotham3.persistence
 {
     public class Gotham3Repository<T> : IRepository<T> where T : Entity
     {

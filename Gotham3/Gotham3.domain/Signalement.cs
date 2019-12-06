@@ -1,10 +1,9 @@
-﻿using Gotham3.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Gotham3.Models
+namespace Gotham3.domain
 {
     public class Signalement : Entity
     {

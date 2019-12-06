@@ -9,9 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Gotham3.Data;
-using Gotham3.Models;
-using Gotham3.Data.Mocks;
+using Gotham3.persistence;
+using Gotham3.persistence.Mocks;
+using Gotham3.domain;
 
 namespace Gotham3
 {

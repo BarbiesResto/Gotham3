@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Gotham3.domain;
+using Gotham3.persistence;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Gotham3.Data;
-using Gotham3.Models;
 
-namespace Gotham3.Controllers
+namespace Gotham3.web.Controllers
 {
     public class SignalementsController : Controller
     {

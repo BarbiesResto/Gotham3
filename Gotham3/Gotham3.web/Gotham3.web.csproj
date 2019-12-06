@@ -14,4 +14,9 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Gotham3.domain\Gotham3.domain.csproj" />
+    <ProjectReference Include="..\Gotham3.persistence\Gotham3.persistence.csproj" />
+  </ItemGroup>
+
 </Project>

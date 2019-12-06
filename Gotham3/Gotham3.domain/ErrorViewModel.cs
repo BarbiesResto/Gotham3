@@ -1,6 +1,6 @@
 using System;
 
-namespace Gotham3.Models
+namespace Gotham3.domain
 {
     public class ErrorViewModel
     {

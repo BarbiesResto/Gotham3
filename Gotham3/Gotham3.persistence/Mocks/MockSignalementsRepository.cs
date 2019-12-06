@@ -1,10 +1,10 @@
-﻿using Gotham3.Models;
+﻿using Gotham3.domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Gotham3.Data.Mocks
+namespace Gotham3.persistence.Mocks
 {
     public class MockSignalementsRepository : IRepository<Signalement>
     {

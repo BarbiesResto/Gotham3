@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Gotham3.Data
+namespace Gotham3.domain
 {
     public class Entity
     {

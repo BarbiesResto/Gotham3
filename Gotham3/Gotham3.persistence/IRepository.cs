@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Gotham3.domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Gotham3.Data
+namespace Gotham3.persistence
 {
     public interface IRepository<T> where T : Entity
     {

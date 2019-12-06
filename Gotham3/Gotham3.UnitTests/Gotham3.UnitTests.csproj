@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Gotham3\Gotham3.web.csproj" />
+    <ProjectReference Include="..\Gotham3.web\Gotham3.web.csproj" />
   </ItemGroup>
 
 </Project>

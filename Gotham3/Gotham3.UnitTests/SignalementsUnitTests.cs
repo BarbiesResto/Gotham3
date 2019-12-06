@@ -1,6 +1,7 @@
-using Gotham3.Controllers;
-using Gotham3.Data.Mocks;
-using Gotham3.Models;
+
+using Gotham3.domain;
+using Gotham3.persistence.Mocks;
+using Gotham3.web.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
