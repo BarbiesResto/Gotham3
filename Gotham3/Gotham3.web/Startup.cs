@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,6 +8,10 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Gotham3.persistence;
+using Gotham3.persistence.Mocks;
+using Gotham3.domain;
 
 namespace Gotham3
 {
@@ -24,6 +28,12 @@ namespace Gotham3
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<Gotham3Context>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("Gotham3Context")), ServiceLifetime.Transient);
+
+            //services.AddSingleton<IRepository<Signalement>, Gotham3Repository<Signalement>>();
+            services.AddSingleton<IRepository<Signalement>, MockSignalementsRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,7 +60,7 @@ namespace Gotham3
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Signalements}/{action=Index}/{id?}");
             });
         }
     }

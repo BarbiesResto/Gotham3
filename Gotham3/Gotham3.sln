@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gotham3", "Gotham3\Gotham3.csproj", "{7A7AA0B7-A550-4D57-9F17-EA6BF8539556}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gotham3.web", "Gotham3.web\Gotham3.web.csproj", "{7A7AA0B7-A550-4D57-9F17-EA6BF8539556}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gotham3.UnitTests", "Gotham3.UnitTests\Gotham3.UnitTests.csproj", "{15ED3330-E92B-4207-B502-54D1A2D9DC9B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gotham3.AcceptanceTests", "Gotham3.AcceptanceTests\Gotham3.AcceptanceTests.csproj", "{EEB48978-3E12-48B8-9666-0B13620F6D06}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gotham3.InterfaceTests", "Gotham3.InterfaceTests\Gotham3.InterfaceTests.csproj", "{B0C1186D-A51E-467D-943B-C6E22BDF8669}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gotham3.domain", "Gotham3.domain\Gotham3.domain.csproj", "{B2B3C302-3981-4261-A4C4-EDF569DC76B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gotham3.persistence", "Gotham3.persistence\Gotham3.persistence.csproj", "{5522AB25-6E1D-4E8D-B558-6D1F0B767D5F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +25,26 @@ Global
 		{7A7AA0B7-A550-4D57-9F17-EA6BF8539556}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A7AA0B7-A550-4D57-9F17-EA6BF8539556}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A7AA0B7-A550-4D57-9F17-EA6BF8539556}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15ED3330-E92B-4207-B502-54D1A2D9DC9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15ED3330-E92B-4207-B502-54D1A2D9DC9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15ED3330-E92B-4207-B502-54D1A2D9DC9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15ED3330-E92B-4207-B502-54D1A2D9DC9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEB48978-3E12-48B8-9666-0B13620F6D06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEB48978-3E12-48B8-9666-0B13620F6D06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEB48978-3E12-48B8-9666-0B13620F6D06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEB48978-3E12-48B8-9666-0B13620F6D06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0C1186D-A51E-467D-943B-C6E22BDF8669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0C1186D-A51E-467D-943B-C6E22BDF8669}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0C1186D-A51E-467D-943B-C6E22BDF8669}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0C1186D-A51E-467D-943B-C6E22BDF8669}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2B3C302-3981-4261-A4C4-EDF569DC76B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B3C302-3981-4261-A4C4-EDF569DC76B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B3C302-3981-4261-A4C4-EDF569DC76B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B3C302-3981-4261-A4C4-EDF569DC76B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5522AB25-6E1D-4E8D-B558-6D1F0B767D5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5522AB25-6E1D-4E8D-B558-6D1F0B767D5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5522AB25-6E1D-4E8D-B558-6D1F0B767D5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5522AB25-6E1D-4E8D-B558-6D1F0B767D5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Gotham3.domain.Signalement>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 align="center">Liste des signalements</h1>
+
+@*<p>
+    <a asp-action="Create">Create New</a>
+</p>*@
+<br />
+<div align="right">
+    <p>
+        <button id="ButtonPolices">Appeler les policiers</button>
+        <button id="BouttonPompiers">Appeler les pompiers</button>
+        <button id="BouttonAmbulances">Appeler l'ambulance</button>
+    </p>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th id="NatureLabel">
+                Nature de l'évènement
+            </th>
+            <th id="SectorLabel">
+                Secteur
+            </th>
+            <th id="TimeLabel">
+                Heure
+            </th>
+            <th id="CommentLabel">
+                Commentaires
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Event_Nature)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sector)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comment)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Détails</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Supprimer</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
