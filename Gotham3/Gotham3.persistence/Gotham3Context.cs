@@ -12,7 +12,9 @@ namespace Gotham3.persistence
         }
 
         public DbSet<Signalement> Signalement { get; set; }
+        public DbSet<CapsuleInformative> CapsuleInformative { get; set; }
         public DbSet<Nouvelle> Nouvelle { get; set; }
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder
@@ -21,6 +23,12 @@ namespace Gotham3.persistence
                 .HasConversion(
                     v => v.ToString(),
                     v => (Status)Enum.Parse(typeof(Status), v));
-        }
+            modelBuilder
+                .Entity<CapsuleInformative>()
+                .Property(p => p.Status)
+                .HasConversion(
+                    v => v.ToString(),
+                    v => (Status)Enum.Parse(typeof(Status), v));
+         }
     }
 }

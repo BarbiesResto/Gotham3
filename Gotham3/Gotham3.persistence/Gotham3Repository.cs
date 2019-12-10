@@ -72,7 +72,7 @@ namespace Gotham3.persistence
             }
         }
 
-        public async Task Publish(int? id)
+        public async Task Publish(int id)
         {
             using (var scope = scopeFactory.CreateScope())
             {
@@ -80,15 +80,12 @@ namespace Gotham3.persistence
                 var items = await dbContext.Set<T>().ToListAsync();
                 var itemToUpdate = items.FirstOrDefault(x => x.Id == id);
                 if (itemToUpdate.Status == Status.Attente)
-                {
                     itemToUpdate.Status = Status.Publiée;
-                }
                 else
-                {
                     itemToUpdate.Status = Status.Attente;
-                }
+
                 dbContext.Update(itemToUpdate);
-                dbContext.SaveChanges();
+                await dbContext.SaveChangesAsync();
             }
         }
     }
