@@ -21,7 +21,7 @@ namespace Gotham3.persistence
         {
             modelBuilder
                 .Entity<CapsuleInformative>()
-                .Property(p => p.State)
+                .Property(p => p.Status)
                 .HasConversion(
                     v => v.ToString(),
                     v => (Status)Enum.Parse(typeof(Status), v));

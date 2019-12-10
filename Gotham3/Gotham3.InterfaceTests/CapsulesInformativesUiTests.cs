@@ -58,7 +58,7 @@ namespace Gotham3.InterfaceTests
         {
             using (var driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)))
             {
-                driver.Navigate().GoToUrl(@"https://localhost:44301/");
+                driver.Navigate().GoToUrl(@"https://localhost:44301/CapsuleInformatives");
 
                 var titleLabel = driver.FindElement(By.Id("Titre"));
                 Assert.IsNotNull(titleLabel);
@@ -69,8 +69,8 @@ namespace Gotham3.InterfaceTests
                 var linkLabel = driver.FindElement(By.Id("Lien"));
                 Assert.IsNotNull(linkLabel);
 
-                var stateLabel = driver.FindElement(By.Id("Status"));
-                Assert.IsNotNull(stateLabel);
+                var statusLabel = driver.FindElement(By.Id("Status"));
+                Assert.IsNotNull(statusLabel);
             }
         }
     }
