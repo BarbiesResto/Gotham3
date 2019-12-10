@@ -53,7 +53,7 @@ namespace Gotham3.web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Title,Description,Link,State,Id")] CapsuleInformative capsuleInformative)
+        public async Task<IActionResult> Create([Bind("Title,Description,Link,Status,Id")] CapsuleInformative capsuleInformative)
         {
             if (ModelState.IsValid)
             {

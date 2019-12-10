@@ -49,7 +49,7 @@ namespace Gotham3.AcceptanceTests
             //Titre, Description, Status, Lien
             Assert.Contains(_capsuleInformative.Title, _htmlPageContent);
             Assert.Contains(_capsuleInformative.Description, _htmlPageContent);
-            Assert.Contains(_capsuleInformative.State.ToString(), _htmlPageContent);
+            Assert.Contains(_capsuleInformative.Status.ToString(), _htmlPageContent);
             Assert.Contains(_capsuleInformative.Link, _htmlPageContent);
 
             //Accessible en tout temps
@@ -59,7 +59,7 @@ namespace Gotham3.AcceptanceTests
             Assert.Contains("Title", _htmlPageContent);
             Assert.Contains("Description", _htmlPageContent);
             Assert.Contains("Link", _htmlPageContent);
-            Assert.Contains("State", _htmlPageContent);
+            Assert.Contains("Status", _htmlPageContent);
         }
     }
 }

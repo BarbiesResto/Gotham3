@@ -15,8 +15,8 @@ namespace Gotham3.persistence.Mocks
         {
             _capsuleInformatives = new List<CapsuleInformative>()
             {
-                new CapsuleInformative() { Id = 0, Description = "Description1", Link = "Lien 1", State = Status.Attente, Title = "Capsule1"},
-                new CapsuleInformative() { Id = 1, Description = "Description2", Link = "Lien 2", State = Status.Publiée, Title = "Capsule2"}
+                new CapsuleInformative() { Id = 0, Description = "Description1", Link = "Lien 1", Status = Status.Attente, Title = "Capsule1"},
+                new CapsuleInformative() { Id = 1, Description = "Description2", Link = "Lien 2", Status = Status.Publiée, Title = "Capsule2"}
             };
         }
         public Task Delete(int? id)
@@ -54,17 +54,17 @@ namespace Gotham3.persistence.Mocks
             var entityToModify = await GetById(entity.Id);
             entityToModify.Description = entity.Description;
             entityToModify.Link = entity.Link;
-            entityToModify.State = entity.State;
+            entityToModify.Status = entity.Status;
             entityToModify.Title = entity.Title;
         }
 
         public async Task Publish(int id)
         {
             var itemToUpdate = await GetById(id);
-            if (itemToUpdate.State == Status.Attente)
-                itemToUpdate.State = Status.Publiée;
+            if (itemToUpdate.Status == Status.Attente)
+                itemToUpdate.Status = Status.Publiée;
             else
-                itemToUpdate.State = Status.Attente;
+                itemToUpdate.Status = Status.Attente;
         }
     }
 }

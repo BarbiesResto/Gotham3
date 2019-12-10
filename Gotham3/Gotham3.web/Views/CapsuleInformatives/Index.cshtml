@@ -22,7 +22,7 @@
                 @Html.DisplayNameFor(model => model.Link)
             </th>
             <th id="Status">
-                @Html.DisplayNameFor(model => model.State)
+                @Html.DisplayNameFor(model => model.Status)
             </th>
             <th></th>
         </tr>
@@ -40,12 +40,12 @@
                 @Html.DisplayFor(modelItem => item.Link)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.State)
+                @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id" id="EditButton">Edit</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id" id="DeleteButton">Delete</a> |
-                @if (item.State == Status.Attente)
+                @if (item.Status == Status.Attente)
                 {
                     <a asp-action="Publish" asp-route-id="@item.Id" id="PublierButton">Publier</a>
                 }
