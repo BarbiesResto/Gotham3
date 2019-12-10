@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Gotham3.domain.CapsuleInformative>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th id="Titre">
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th id="Description">
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th id="Lien">
+                @Html.DisplayNameFor(model => model.Link)
+            </th>
+            <th id="Status">
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Link)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" id="EditButton">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" id="DeleteButton">Delete</a> |
+                @if (item.Status == Status.Attente)
+                {
+                    <a asp-action="Publish" asp-route-id="@item.Id" id="PublierButton">Publier</a>
+                }
+                else
+                {
+                    <a asp-action="Publish" asp-route-id="@item.Id" id="DepublierButton">Dépublier</a>
+                }
+
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
