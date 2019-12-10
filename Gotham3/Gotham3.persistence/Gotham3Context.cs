@@ -1,9 +1,6 @@
 ﻿using Gotham3.domain;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Gotham3.persistence
 {
@@ -15,5 +12,15 @@ namespace Gotham3.persistence
         }
 
         public DbSet<Signalement> Signalement { get; set; }
+        public DbSet<Nouvelle> Nouvelle { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Entity<Nouvelle>()
+                .Property(p => p.Status)
+                .HasConversion(
+                    v => v.ToString(),
+                    v => (Status)Enum.Parse(typeof(Status), v));
+        }
     }
 }
