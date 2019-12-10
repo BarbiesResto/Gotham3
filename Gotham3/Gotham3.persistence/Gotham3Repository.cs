@@ -49,5 +49,46 @@ namespace Gotham3.persistence
                 dbContext.SaveChanges();
             }
         }
+
+        public async Task Add(T entity)
+        {
+            using (var scope = scopeFactory.CreateScope())
+            {
+                var dbContext = scope.ServiceProvider.GetRequiredService<Gotham3Context>();
+                var items = await dbContext.Set<T>().ToListAsync();
+                items.Add(entity);
+                dbContext.SaveChanges();
+            }
+        }
+
+        public async Task Update(T entity)
+        {
+            using (var scope = scopeFactory.CreateScope())
+            {
+                var dbContext = scope.ServiceProvider.GetRequiredService<Gotham3Context>();
+                var items = await dbContext.Set<T>().ToListAsync();
+                var itemToUpdate = items.FirstOrDefault(x => x.Id == entity.Id);
+                dbContext.Update(itemToUpdate);
+                dbContext.SaveChanges();
+            }
+        }
+
+        public async Task Publish(int id)
+        {
+            using (var scope = scopeFactory.CreateScope())
+            {
+                var dbContext = scope.ServiceProvider.GetRequiredService<Gotham3Context>();
+                var items = await dbContext.Set<T>().ToListAsync();
+                var itemToUpdate = items.FirstOrDefault(x => x.Id == id);
+
+                if (itemToUpdate.State == Status.Attente)
+                    itemToUpdate.State = Status.Publiée;
+                else
+                    itemToUpdate.State = Status.Attente;
+
+                dbContext.Update(itemToUpdate);
+                await dbContext.SaveChangesAsync();
+            }
+        }
     }
 }
