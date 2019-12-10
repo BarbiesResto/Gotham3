@@ -9,7 +9,9 @@ namespace Gotham3.persistence
     public interface IRepository<T> where T : Entity
     {
         Task<IQueryable<T>> GetAll();
-
+        Task Add(T entity);
+        Task Publish(int id);
+        Task Update(T entity);
         Task<T> GetById(int? id);
         Task Delete(int? id);
     }

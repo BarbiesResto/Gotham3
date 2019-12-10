@@ -1,0 +1,60 @@
+﻿@model Gotham3.domain.Alerte
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Alerte</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Event_Nature" class="control-label"></label>
+                <input asp-for="Event_Nature" class="form-control" />
+                <span asp-validation-for="Event_Nature" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sector" class="control-label"></label>
+                <input asp-for="Sector" class="form-control" />
+                <span asp-validation-for="Sector" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Risk" class="control-label"></label>
+                <input asp-for="Risk" class="form-control" />
+                <span asp-validation-for="Risk" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ressource" class="control-label"></label>
+                <input asp-for="Ressource" class="form-control" />
+                <span asp-validation-for="Ressource" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Advice" class="control-label"></label>
+                <input asp-for="Advice" class="form-control" />
+                <span asp-validation-for="Advice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Published" class="control-label"></label>
+                <select asp-for="Published" asp-items="Html.GetEnumSelectList<Status>()" class="form-control">
+                    <option selected="selected" value="">Choisir une option</option>
+                </select>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

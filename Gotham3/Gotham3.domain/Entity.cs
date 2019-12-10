@@ -3,10 +3,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Gotham3.domain
 {
+    public enum Status
+    {
+        Attente,
+        Publiée
+    }
+
     public class Entity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        public Status Published { get; set; }
     }
 }

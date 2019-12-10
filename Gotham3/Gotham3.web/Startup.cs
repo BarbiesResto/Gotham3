@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -34,6 +29,7 @@ namespace Gotham3
 
             //services.AddSingleton<IRepository<Signalement>, Gotham3Repository<Signalement>>();
             services.AddSingleton<IRepository<Signalement>, MockSignalementsRepository>();
+            services.AddSingleton<IRepository<Alerte>, MockAlertesRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
