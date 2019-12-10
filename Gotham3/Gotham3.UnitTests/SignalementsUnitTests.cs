@@ -61,10 +61,10 @@ namespace Gotham3.UnitTests
         public async Task Test_Delete_Should_DeleteFromList()
         {
             const int FIRST_ID = 0;
-            int EXPECTED_NUMER = _mockRepo._signalements.Count - 1;
+            int EXPECTED_NUMBER = _mockRepo._signalements.Count - 1;
             await _signalementController.Delete(FIRST_ID);
 
-            Assert.Equal(EXPECTED_NUMER, _mockRepo._signalements.Count);
+            Assert.Equal(EXPECTED_NUMBER, _mockRepo._signalements.Count);
         }
 
         [Fact]

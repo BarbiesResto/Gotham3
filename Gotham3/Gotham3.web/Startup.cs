@@ -34,6 +34,8 @@ namespace Gotham3
 
             //services.AddSingleton<IRepository<Signalement>, Gotham3Repository<Signalement>>();
             services.AddSingleton<IRepository<Signalement>, MockSignalementsRepository>();
+
+            services.AddSingleton<IRepository<Sinistre>, MockSinistresRepository>();
             services.AddSingleton<IRepository<Nouvelle>, MockNouvellesRepository>();
             services.AddSingleton<IRepository<CapsuleInformative>, MockCapsulesInformativesRepository>();
         }

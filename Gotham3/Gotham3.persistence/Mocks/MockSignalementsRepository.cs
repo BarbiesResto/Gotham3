@@ -47,13 +47,13 @@ namespace Gotham3.persistence.Mocks
 
             return await Task.Run(() => itemToGet);
         }
-        
-        public Task Update(Signalement entity)
+
+        public Task Publish(int id)
         {
             throw new NotImplementedException();
         }
-        
-        public Task Publish(int id)
+
+        public Task Update(Signalement entity)
         {
             throw new NotImplementedException();
         }
