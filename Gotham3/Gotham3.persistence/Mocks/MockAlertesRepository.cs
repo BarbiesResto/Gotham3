@@ -15,8 +15,8 @@ namespace Gotham3.persistence.Mocks
         {
             _alertes = new List<Alerte>()
             {
-                new Alerte() { Id = 0, Event_Nature = "Rats!!", Sector = "Ste-Foy", Risk = "Moyen", Ressource = "Exterminateurs", Advice = "S'enfuir", Published = Status.Attente},
-                new Alerte() { Id = 1, Event_Nature = "Fuite d'eau", Sector = "Cap-rouge", Risk = "Élevé", Ressource = "Qualinet", Advice = "Pomper l'eau", Published = Status.Publiée}
+                new Alerte() { Id = 0, Event_Nature = "Rats!!", Sector = "Ste-Foy", Risk = "Moyen", Ressource = "Exterminateurs", Advice = "Enfuir", Published = Status.Attente},
+                new Alerte() { Id = 1, Event_Nature = "Fuite d'eau", Sector = "Cap-rouge", Risk = "Eleve", Ressource = "Qualinet", Advice = "Pomper l'eau", Published = Status.Publiée}
             };
         }
 
