@@ -15,5 +15,16 @@ namespace Gotham3.persistence
         }
 
         public DbSet<Signalement> Signalement { get; set; }
+
+        public DbSet<Sinistre> Sinistre { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder) {
+            modelBuilder
+                .Entity<Sinistre>()
+                .Property(p => p.Status)
+                .HasConversion(
+                v => v.ToString(),
+                v => (Status)Enum.Parse(typeof(Status), v));
+        }
     }
 }
