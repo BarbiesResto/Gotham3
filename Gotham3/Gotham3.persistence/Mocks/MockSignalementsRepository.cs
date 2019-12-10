@@ -19,6 +19,11 @@ namespace Gotham3.persistence.Mocks
             };
         }
 
+        public Task Add(Signalement entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task Delete(int? id)
         {
             var items = _signalements.AsQueryable();
@@ -42,18 +47,12 @@ namespace Gotham3.persistence.Mocks
 
             return await Task.Run(() => itemToGet);
         }
-
-        public Task Add(Signalement entity)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public Task Update(Signalement entity)
         {
             throw new NotImplementedException();
         }
-
-
+        
         public Task Publish(int id)
         {
             throw new NotImplementedException();

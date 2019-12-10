@@ -66,10 +66,9 @@ namespace Gotham3.persistence
             using (var scope = scopeFactory.CreateScope())
             {
                 var dbContext = scope.ServiceProvider.GetRequiredService<Gotham3Context>();
-                var items = await dbContext.Set<T>().ToListAsync();
-                var itemToUpdate = items.FirstOrDefault(x => x.Id == entity.Id);
-                dbContext.Update(itemToUpdate);
-                dbContext.SaveChanges();
+                dbContext.Update(entity);
+
+                await dbContext.SaveChangesAsync();
             }
         }
 
@@ -80,7 +79,6 @@ namespace Gotham3.persistence
                 var dbContext = scope.ServiceProvider.GetRequiredService<Gotham3Context>();
                 var items = await dbContext.Set<T>().ToListAsync();
                 var itemToUpdate = items.FirstOrDefault(x => x.Id == id);
-
                 if (itemToUpdate.Status == Status.Attente)
                     itemToUpdate.Status = Status.Publiée;
                 else
