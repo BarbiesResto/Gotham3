@@ -55,9 +55,16 @@
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Mettre à jour</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Publish" asp-route-id="@item.Id">Publiée/Dépubliée</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Modifier</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Détails</a> |
+                @if (item.Status == Status.Attente)
+                {
+                    <a asp-action="Publish" asp-route-id="@item.Id" id="PublierButton">Publier</a>
+                }
+                else
+                {
+                    <a asp-action="Publish" asp-route-id="@item.Id" id="DepublierButton">Dépublier</a>
+                }
             </td>
         </tr>
 }

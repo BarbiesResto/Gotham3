@@ -13,6 +13,6 @@ namespace Gotham3.persistence
         Task Update(T entity);
         Task<T> GetById(int? id);
         Task Delete(int? id);
-        Task Publish(int id);
+        Task Publish(int? id);
     }
 }

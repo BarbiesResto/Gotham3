@@ -18,12 +18,6 @@ namespace Gotham3.persistence.Mocks
                 new Signalement() { Id = 1, Event_Nature = "Fuite d'eau", Sector = "Cap-rouge", Time = "11:11", Comment = "Qualinet, la solution"}
             };
         }
-
-        public Task Add(Signalement entity)
-        {
-            throw new NotImplementedException();
-        }
-
         public Task Delete(int? id)
         {
             var items = _signalements.AsQueryable();
@@ -58,10 +52,10 @@ namespace Gotham3.persistence.Mocks
             throw new NotImplementedException();
         }
 
-        public Task Publish(int id)
+
+        public Task Publish(int? id)
         {
             throw new NotImplementedException();
         }
-
     }
 }

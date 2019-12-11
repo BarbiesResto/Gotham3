@@ -71,7 +71,7 @@ namespace Gotham3.persistence
             }
         }
 
-        public async Task Publish(int id)
+        public async Task Publish(int? id)
         {
             using (var scope = scopeFactory.CreateScope())
             {

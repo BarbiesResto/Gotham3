@@ -43,8 +43,8 @@
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id" id="EditButton">Edit</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id" id="DeleteButton">Delete</a> |
+                <a asp-action="Edit" asp-route-id="@item.Id" id="EditButton">Modifier</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" id="DeleteButton">Supprimer</a> |
                 @if (item.Status == Status.Attente)
                 {
                     <a asp-action="Publish" asp-route-id="@item.Id" id="PublierButton">Publier</a>

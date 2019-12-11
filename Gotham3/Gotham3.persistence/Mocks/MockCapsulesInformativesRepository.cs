@@ -58,7 +58,7 @@ namespace Gotham3.persistence.Mocks
             entityToModify.Title = entity.Title;
         }
 
-        public async Task Publish(int id)
+        public async Task Publish(int? id)
         {
             var itemToUpdate = await GetById(id);
             if (itemToUpdate.Status == Status.Attente)
