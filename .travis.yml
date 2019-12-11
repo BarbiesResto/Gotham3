@@ -7,8 +7,8 @@ dotnet: 3.0
 services:
     - docker
 script:
-      - docker build -f ./Gotham3/Dockerfile -t barbiesresto/Gotham3:app .
-      - docker build -f ./Gotham3/Docker_Database/Dockerfile -t barbiesresto/Gotham3:db .
+      - docker build -f ./Gotham3/Dockerfile -t barbiesresto/gotham3:app .
+      - docker build -f ./Gotham3/Docker_Database/Dockerfile -t barbiesresto/gotham3:db .
 deploy:
   provider: script
   script: bash ./Gotham3/Docker_Database/push.sh
