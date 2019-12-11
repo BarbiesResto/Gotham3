@@ -8,10 +8,10 @@ RUN dotnet publish ./Gotham3 -c Release -o out
 RUN dotnet test ./Gotham3/Gotham3.UnitTests
 RUN dotnet test ./Gotham3/Gotham3.AcceptanceTests
 
-#FROM mcr.microsoft.com/dotnet/core/aspnet:3.0 AS runtime
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.0 AS runtime
 
-#WORKDIR /app
+WORKDIR /app
 
-#COPY --from=build ./app/out .
+COPY --from=build ./app/out .
 
-#ENTRYPOINT ["dotnet" , "Gotham3.dll"]
+ENTRYPOINT ["dotnet" , "Gotham3.dll"]
