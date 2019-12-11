@@ -21,7 +21,7 @@ namespace Gotham3.persistence
         {
             modelBuilder
                 .Entity<Alerte>()
-                .Property(p => p.Published)
+                .Property(p => p.Status)
                 .HasConversion(
                     v => v.ToString(),
                     v => (Status)Enum.Parse(typeof(Status), v));

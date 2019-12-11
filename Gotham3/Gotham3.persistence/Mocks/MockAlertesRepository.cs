@@ -15,8 +15,8 @@ namespace Gotham3.persistence.Mocks
         {
             _alertes = new List<Alerte>()
             {
-                new Alerte() { Id = 0, Event_Nature = "Rats!!", Sector = "Ste-Foy", Risk = "Moyen", Ressource = "Exterminateurs", Advice = "Enfuir", Published = Status.Attente},
-                new Alerte() { Id = 1, Event_Nature = "Fuite d'eau", Sector = "Cap-rouge", Risk = "Eleve", Ressource = "Qualinet", Advice = "Pomper l'eau", Published = Status.Publiée}
+                new Alerte() { Id = 0, Event_Nature = "Rats!!", Sector = "Ste-Foy", Risk = "Moyen", Ressource = "Exterminateurs", Advice = "Enfuir", Status = Status.Attente},
+                new Alerte() { Id = 1, Event_Nature = "Fuite d'eau", Sector = "Cap-rouge", Risk = "Eleve", Ressource = "Qualinet", Advice = "Pomper l'eau", Status = Status.Publiée}
             };
         }
 
@@ -33,19 +33,19 @@ namespace Gotham3.persistence.Mocks
             entityToModify.Ressource = alerte.Ressource;
             entityToModify.Advice = alerte.Advice;
             entityToModify.Risk = alerte.Risk;
-            entityToModify.Published = alerte.Published;
+            entityToModify.Status = alerte.Status;
         }
 
         public async Task Publish(int id)
         {
             var entityToModify = await GetById(id);
-            if(entityToModify.Published == Status.Attente)
+            if(entityToModify.Status == Status.Attente)
             {
-                entityToModify.Published = Status.Publiée;
+                entityToModify.Status = Status.Publiée;
             }
             else
             {
-                entityToModify.Published = Status.Attente;
+                entityToModify.Status = Status.Attente;
             }
         }
 

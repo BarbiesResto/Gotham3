@@ -108,7 +108,7 @@ namespace Gotham3.UnitTests
         public async void Test_Publish_WhenNotPublished_ShouldPublish()
         {
             //Arrange
-            Alerte alert = new Alerte() { Id = 0, Event_Nature = "Rats!!", Sector = "Ste-Foy", Risk = "Moyen", Ressource = "Exterminateurs", Advice = "S'enfuir", Published = Status.Attente };
+            Alerte alert = new Alerte() { Id = 0, Event_Nature = "Rats!!", Sector = "Ste-Foy", Risk = "Moyen", Ressource = "Exterminateurs", Advice = "S'enfuir", Status = Status.Attente };
 
             //Act
             var result = await _alertesController.Publish(alert.Id, alert);
@@ -116,15 +116,15 @@ namespace Gotham3.UnitTests
             //Assert
             Status EXPECTED_STATUS = Status.Publiée;
             Alerte updatedAlert = await _mockRepo.GetById(alert.Id);
-            Assert.Equal(EXPECTED_STATUS, updatedAlert.Published);
+            Assert.Equal(EXPECTED_STATUS, updatedAlert.Status);
         }
 
         [Fact]
         public async void Test_Update_ShouldUpdate()
         {
             //Arrange
-            Alerte alert = new Alerte() { Id = 0, Event_Nature = "Rats!!", Sector = "Ste-Foy", Risk = "Moyen", Ressource = "Exterminateurs", Advice = "S'enfuir", Published = Status.Publiée };
-            Alerte alertUpdated = new Alerte() { Id = 0, Event_Nature = "Test!!", Sector = "Ste-Foy", Risk = "Faible", Ressource = "Exterminateurs", Advice = "S'enfuir", Published = Status.Publiée };
+            Alerte alert = new Alerte() { Id = 0, Event_Nature = "Rats!!", Sector = "Ste-Foy", Risk = "Moyen", Ressource = "Exterminateurs", Advice = "S'enfuir", Status = Status.Publiée };
+            Alerte alertUpdated = new Alerte() { Id = 0, Event_Nature = "Test!!", Sector = "Ste-Foy", Risk = "Faible", Ressource = "Exterminateurs", Advice = "S'enfuir", Status = Status.Publiée };
 
             //Act
             var result = await _alertesController.Edit(alert.Id, alertUpdated);
