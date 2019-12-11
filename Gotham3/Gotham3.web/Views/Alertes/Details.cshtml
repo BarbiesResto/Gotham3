@@ -1,0 +1,54 @@
+﻿@model Gotham3.domain.Alerte
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Alerte</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Event_Nature)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Event_Nature)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Sector)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sector)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Risk)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Risk)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ressource)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ressource)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Advice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Advice)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

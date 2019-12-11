@@ -11,7 +11,7 @@ namespace Gotham3.AcceptanceTests
 {
     [Story(
         Title="Je veux visualier la liste des signalements",
-        AsA="Utilisateur général",
+        AsA="Utilisateur general",
         IWant="voir la listes des signalements",
         SoThat="Prendre action sur ceux-ci")]
 
@@ -46,7 +46,7 @@ namespace Gotham3.AcceptanceTests
 
         private void L_information_concernant_le_signalement_s_affiche()
         {
-            //Nature de l'évènement, secteur, heure, commentaires
+            //Nature de l'evènement, secteur, heure, commentaires
             Assert.Contains(_signalement.Event_Nature, _htmlPageContent);
             Assert.Contains(_signalement.Sector, _htmlPageContent);
             Assert.Contains(_signalement.Time, _htmlPageContent);
@@ -55,7 +55,7 @@ namespace Gotham3.AcceptanceTests
             //Accessible en tout temps
             Assert.Contains("Listes des signalements", _htmlPageContent);
 
-            //Services d'urgences peuvent être contactés facilement
+            //Services d'urgences peuvent être contactes facilement
             Assert.Contains("Appeler les policiers", _htmlPageContent);
             Assert.Contains("Appeler les pompiers", _htmlPageContent);
             Assert.Contains("Appeler l'ambulance", _htmlPageContent);
