@@ -9,6 +9,7 @@ namespace Gotham3.persistence
         public Gotham3Context (DbContextOptions<Gotham3Context> options)
             : base(options)
         {
+
         }
 
         public DbSet<Signalement> Signalement { get; set; }  
