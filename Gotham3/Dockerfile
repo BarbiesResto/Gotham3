@@ -15,4 +15,4 @@ COPY --from=build ./app/out .
 
 EXPOSE 6002
 
-ENTRYPOINT ["dotnet" , "Gotham3.dll"]
+ENTRYPOINT ["dotnet" , "Gotham3.web.dll"]
