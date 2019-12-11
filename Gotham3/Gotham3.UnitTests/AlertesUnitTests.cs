@@ -114,7 +114,7 @@ namespace Gotham3.UnitTests
             var result = await _alertesController.Publish(alert.Id, alert);
 
             //Assert
-            Status EXPECTED_STATUS = Status.Publiée;
+            Status EXPECTED_STATUS = Status.Publiee;
             Alerte updatedAlert = await _mockRepo.GetById(alert.Id);
             Assert.Equal(EXPECTED_STATUS, updatedAlert.Status);
         }
@@ -123,8 +123,8 @@ namespace Gotham3.UnitTests
         public async void Test_Update_ShouldUpdate()
         {
             //Arrange
-            Alerte alert = new Alerte() { Id = 0, Event_Nature = "Rats!!", Sector = "Ste-Foy", Risk = "Moyen", Ressource = "Exterminateurs", Advice = "S'enfuir", Status = Status.Publiée };
-            Alerte alertUpdated = new Alerte() { Id = 0, Event_Nature = "Test!!", Sector = "Ste-Foy", Risk = "Faible", Ressource = "Exterminateurs", Advice = "S'enfuir", Status = Status.Publiée };
+            Alerte alert = new Alerte() { Id = 0, Event_Nature = "Rats!!", Sector = "Ste-Foy", Risk = "Moyen", Ressource = "Exterminateurs", Advice = "S'enfuir", Status = Status.Publiee };
+            Alerte alertUpdated = new Alerte() { Id = 0, Event_Nature = "Test!!", Sector = "Ste-Foy", Risk = "Faible", Ressource = "Exterminateurs", Advice = "S'enfuir", Status = Status.Publiee };
 
             //Act
             var result = await _alertesController.Edit(alert.Id, alertUpdated);

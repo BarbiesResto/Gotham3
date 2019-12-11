@@ -6,7 +6,7 @@ namespace Gotham3.domain
     public enum Status
     {
         Attente,
-        Publiée
+        Publiee
     }
 
     public class Entity

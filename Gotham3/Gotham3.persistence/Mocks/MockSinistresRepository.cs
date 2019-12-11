@@ -15,7 +15,7 @@ namespace Gotham3.persistence.Mocks
             _sinistres = new List<Sinistre>()
             {
                 new Sinistre() { Id = 0, Description = "Il y a un gros sinistre sur la rue principale.", Month = "Juin", Status = Status.Attente, Title = "Bulldozer"},
-                new Sinistre() { Id = 1, Description = "Il y a un gros sinistre sur la rue secondaire.", Month = "Avril", Status = Status.Publiée, Title = "McDonalds"}
+                new Sinistre() { Id = 1, Description = "Il y a un gros sinistre sur la rue secondaire.", Month = "Avril", Status = Status.Publiee, Title = "McDonalds"}
             };
         }
 
@@ -63,7 +63,7 @@ namespace Gotham3.persistence.Mocks
             var itemToUpdate = await GetById(id);
 
             if (itemToUpdate.Status == Status.Attente)
-                itemToUpdate.Status = Status.Publiée;
+                itemToUpdate.Status = Status.Publiee;
             else
                 itemToUpdate.Status = Status.Attente;
         }

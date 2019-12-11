@@ -175,7 +175,7 @@ namespace Gotham3.UnitTests
 
             //Assert
             var secondStatus = _mockRepo._nouvelles.First().Status;
-            Assert.Equal(Status.Publiée, secondStatus);
+            Assert.Equal(Status.Publiee, secondStatus);
         }
     }
 }

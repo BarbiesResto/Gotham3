@@ -16,7 +16,7 @@ namespace Gotham3.persistence.Mocks
             _alertes = new List<Alerte>()
             {
                 new Alerte() { Id = 0, Event_Nature = "Rats!!", Sector = "Ste-Foy", Risk = "Moyen", Ressource = "Exterminateurs", Advice = "Enfuir", Status = Status.Attente},
-                new Alerte() { Id = 1, Event_Nature = "Fuite d'eau", Sector = "Cap-rouge", Risk = "Eleve", Ressource = "Qualinet", Advice = "Pomper l'eau", Status = Status.Publiée}
+                new Alerte() { Id = 1, Event_Nature = "Fuite d'eau", Sector = "Cap-rouge", Risk = "Eleve", Ressource = "Qualinet", Advice = "Pomper l'eau", Status = Status.Publiee}
             };
         }
 
@@ -41,7 +41,7 @@ namespace Gotham3.persistence.Mocks
             var entityToModify = await GetById(id);
             if(entityToModify.Status == Status.Attente)
             {
-                entityToModify.Status = Status.Publiée;
+                entityToModify.Status = Status.Publiee;
             }
             else
             {

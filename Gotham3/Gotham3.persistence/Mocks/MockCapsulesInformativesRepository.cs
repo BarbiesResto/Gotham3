@@ -16,7 +16,7 @@ namespace Gotham3.persistence.Mocks
             _capsuleInformatives = new List<CapsuleInformative>()
             {
                 new CapsuleInformative() { Id = 0, Description = "Description1", Link = "Lien 1", Status = Status.Attente, Title = "Capsule1"},
-                new CapsuleInformative() { Id = 1, Description = "Description2", Link = "Lien 2", Status = Status.Publiée, Title = "Capsule2"}
+                new CapsuleInformative() { Id = 1, Description = "Description2", Link = "Lien 2", Status = Status.Publiee, Title = "Capsule2"}
             };
         }
         public Task Delete(int? id)
@@ -62,7 +62,7 @@ namespace Gotham3.persistence.Mocks
         {
             var itemToUpdate = await GetById(id);
             if (itemToUpdate.Status == Status.Attente)
-                itemToUpdate.Status = Status.Publiée;
+                itemToUpdate.Status = Status.Publiee;
             else
                 itemToUpdate.Status = Status.Attente;
         }

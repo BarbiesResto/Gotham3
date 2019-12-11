@@ -80,7 +80,7 @@ namespace Gotham3.persistence
                 var itemToUpdate = items.FirstOrDefault(x => x.Id == id);
 
                 if (itemToUpdate.Status == Status.Attente)
-                    itemToUpdate.Status = Status.Publiée;
+                    itemToUpdate.Status = Status.Publiee;
                 else
                     itemToUpdate.Status = Status.Attente;
 
