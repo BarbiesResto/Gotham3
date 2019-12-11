@@ -16,6 +16,6 @@ RUN chmod +x ./Gotham3/Docker_Database/run.sh
 #3) Faire en sorte que le fichier run.sh soit exécuté (le shell est "sh")
 CMD ["sh", "./Gotham3/Docker_Database/run.sh"]
 #4) Spécifiez que /src est le dossier courant dans le container
-WORDIR /src
+WORKDIR /src
 #4) Exposer le port 1433
 EXPOSE 1433
