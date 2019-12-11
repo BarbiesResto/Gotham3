@@ -12,7 +12,7 @@ namespace Gotham3.AcceptanceTests
     
     [Story(
         Title="Je veux visualier la liste des nouvelles",
-        AsA="Utilisateur général",
+        AsA="Utilisateur general",
         IWant="faire la gestion des nouvelles existantes",
         SoThat="garder une liste à jour et pertinente")]
     
@@ -47,7 +47,7 @@ namespace Gotham3.AcceptanceTests
 
         private void L_information_concernant_la_nouvelle_s_affiche()
         {
-            //Nature de l'évènement, secteur, heure, commentaires
+            //Nature de l'evènement, secteur, heure, commentaires
             Assert.Contains(_nouvelle.Title, _htmlPageContent);
             Assert.Contains(_nouvelle.Text_Desc, _htmlPageContent);
             Assert.Contains(_nouvelle.Link_Media, _htmlPageContent);
@@ -55,7 +55,7 @@ namespace Gotham3.AcceptanceTests
             //Accessible en tout temps
             Assert.Contains("Nouvelle", _htmlPageContent);
 
-            //Services d'urgences peuvent être contactés facilement
+            //Services d'urgences peuvent être contactes facilement
             Assert.Contains("Modifier", _htmlPageContent);
             Assert.Contains("Details", _htmlPageContent);
             Assert.Contains("Supprimer", _htmlPageContent);

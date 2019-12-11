@@ -12,7 +12,7 @@ namespace Gotham3.AcceptanceTests
 {
     [Story(
         Title = "Je veux visualier la liste des capsules informatives",
-        AsA = "Utilisateur général",
+        AsA = "Utilisateur general",
         IWant = "voir la liste de capsules informatives",
         SoThat = "Prendre action sur celles-ci")]
     public class CapsulesInformativesAcceptancesTests : AcceptanceTestsBase
@@ -55,7 +55,7 @@ namespace Gotham3.AcceptanceTests
             //Accessible en tout temps
             Assert.Contains("Capsules Informatives", _htmlPageContent);
 
-            //Toutes les données sont affichées
+            //Toutes les donnees sont affichees
             Assert.Contains("Title", _htmlPageContent);
             Assert.Contains("Description", _htmlPageContent);
             Assert.Contains("Link", _htmlPageContent);

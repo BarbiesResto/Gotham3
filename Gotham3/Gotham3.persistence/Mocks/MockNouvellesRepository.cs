@@ -15,7 +15,7 @@ namespace Gotham3.persistence.Mocks
             _nouvelles = new List<Nouvelle>()
             {
                 new Nouvelle { Id = 0, Title = "Nouvelle plus ou moins interessante", Text_Desc = "ipsum dolor", Link_Media = " imagna", Status = Status.Attente},
-                new Nouvelle { Id = 1, Title = "Nouvelle intéressante!", Text_Desc = "Lorem ipsum dolor Lorem ipsum dolor", Link_Media = " incididunt ut labore et dolore magna", Status = Status.Publiee}
+                new Nouvelle { Id = 1, Title = "Nouvelle interessante!", Text_Desc = "Lorem ipsum dolor Lorem ipsum dolor", Link_Media = " incididunt ut labore et dolore magna", Status = Status.Publiee}
             };
         }
 

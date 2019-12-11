@@ -12,7 +12,7 @@ namespace Gotham3.AcceptanceTests
 {
     [Story(
         Title = "Je veux visualier la liste des alertes",
-        AsA = "Utilisateur général",
+        AsA = "Utilisateur general",
         IWant = "voir la listes des alertes",
         SoThat = "Prendre action sur ceux-ci")]
 
@@ -49,7 +49,7 @@ namespace Gotham3.AcceptanceTests
 
             private void L_information_concernant_le_alertes_affiche()
             {
-                //Nature de l'évènement, secteur, heure, commentaires
+                //Nature de l'evènement, secteur, heure, commentaires
                 Assert.Contains(_alerte.Event_Nature, _htmlPageContent);
                 Assert.Contains(_alerte.Sector, _htmlPageContent);
                 Assert.Contains(_alerte.Ressource, _htmlPageContent);

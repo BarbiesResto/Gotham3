@@ -18,8 +18,8 @@ namespace Gotham3.AcceptanceTests
 
         public AcceptanceTestsBase()
         {
-            // Est appelé avant l'exécution de chacun des tests
-            // Démarre un serveur de tests
+            // Est appele avant l'execution de chacun des tests
+            // Demarre un serveur de tests
 
             var acceptanceTestsBasePath = PlatformServices.Default.Application.ApplicationBasePath;
 

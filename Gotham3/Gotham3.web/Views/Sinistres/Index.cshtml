@@ -16,10 +16,10 @@
                 Titre
             </th>
             <th id="DescriptionLabel">
-                Texte de la prévention
+                Texte de la prevention
             </th>
             <th id="MonthLabel">
-                Mois visé
+                Mois vise
             </th>
             <th id="StatusLabel">
                 Statut (Publiee ou en attente)
@@ -48,7 +48,7 @@
                 @if (item.Status == Status.Attente) {
                     <a asp-action="Publish" asp-route-id="@item.Id" class="PublishButton">Publier</a>
                 } else {
-                    <a asp-action="Publish" asp-route-id="@item.Id" class="PublishButton">Dépublier</a>
+                    <a asp-action="Publish" asp-route-id="@item.Id" class="PublishButton">Depublier</a>
                 }
             </td>
         </tr>
