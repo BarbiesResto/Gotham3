@@ -57,7 +57,7 @@ namespace Gotham3.AcceptanceTests
 
             //Services d'urgences peuvent être contactés facilement
             Assert.Contains("Modifier", _htmlPageContent);
-            Assert.Contains("Détails", _htmlPageContent);
+            Assert.Contains("Details", _htmlPageContent);
             Assert.Contains("Supprimer", _htmlPageContent);
             Assert.Contains("Publier", _htmlPageContent);
         }
