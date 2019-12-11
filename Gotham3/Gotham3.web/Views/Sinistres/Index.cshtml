@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Gotham3.domain.Sinistre>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" id="AddButton" style="text-align:right;">Ajouter un sinistre</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th id="TitleLabel">
+                Titre
+            </th>
+            <th id="DescriptionLabel">
+                Texte de la prévention
+            </th>
+            <th id="MonthLabel">
+                Mois visé
+            </th>
+            <th id="StatusLabel">
+                Statut (publiée ou en attente)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Title)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Month)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="UpdateButton">Modifier</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="DeleteButton">Supprimer</a> |
+                @if (item.Status == Status.Attente) {
+                    <a asp-action="Publish" asp-route-id="@item.Id" class="PublishButton">Publier</a>
+                } else {
+                    <a asp-action="Publish" asp-route-id="@item.Id" class="PublishButton">Dépublier</a>
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

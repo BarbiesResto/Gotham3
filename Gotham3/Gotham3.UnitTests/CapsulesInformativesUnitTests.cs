@@ -1,25 +1,26 @@
-
-using Gotham3.domain;
+﻿using Gotham3.domain;
 using Gotham3.persistence.Mocks;
 using Gotham3.web.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
 namespace Gotham3.UnitTests
 {
-    public class SignalementsUnitTests
+    public class CapsulesInformativesUnitTests
     {
-        private SignalementsController _signalementController;
-        private MockSignalementsRepository _mockRepo;
+        private CapsuleInformativesController _capsuleInformativesController;
+        private MockCapsulesInformativesRepository _mockRepo;
 
-        public SignalementsUnitTests() 
+        public CapsulesInformativesUnitTests()
         {
             //Arrange
-            _mockRepo = new MockSignalementsRepository();
-            _signalementController = new SignalementsController(_mockRepo);
+            _mockRepo = new MockCapsulesInformativesRepository();
+            _capsuleInformativesController = new CapsuleInformativesController(_mockRepo);
         }
 
         //Index
@@ -29,7 +30,7 @@ namespace Gotham3.UnitTests
             //Arrange
 
             //Act
-            var result = await _signalementController.Index();
+            var result = await _capsuleInformativesController.Index();
 
             //Assert
             Assert.IsType<ViewResult>(result);
@@ -40,19 +41,19 @@ namespace Gotham3.UnitTests
         {
             //Arrange
             //Act
-            var result = await _signalementController.Index() as ViewResult;
+            var result = await _capsuleInformativesController.Index() as ViewResult;
 
             //Assert
-            Assert.IsAssignableFrom<IQueryable<Signalement>>(result.Model);
+            Assert.IsAssignableFrom<IQueryable<CapsuleInformative>>(result.Model);
         }
 
         [Fact]
         public async Task Test_Index_Model_Contains_Signalements()
         {
-            var result = await _signalementController.Index() as ViewResult;
+            var result = await _capsuleInformativesController.Index() as ViewResult;
 
-            var model = result.Model as IQueryable<Signalement>;
-            var exepctedNumber = _mockRepo._signalements.Count;
+            var model = result.Model as IQueryable<CapsuleInformative>;
+            var exepctedNumber = _mockRepo._capsuleInformatives.Count;
             Assert.Equal(exepctedNumber, model.Count());
         }
 
@@ -61,16 +62,16 @@ namespace Gotham3.UnitTests
         public async Task Test_Delete_Should_DeleteFromList()
         {
             const int FIRST_ID = 0;
-            int EXPECTED_NUMBER = _mockRepo._signalements.Count - 1;
-            await _signalementController.Delete(FIRST_ID);
+            int EXPECTED_NUMER = _mockRepo._capsuleInformatives.Count - 1;
+            await _capsuleInformativesController.DeleteConfirmed(FIRST_ID);
 
-            Assert.Equal(EXPECTED_NUMBER, _mockRepo._signalements.Count);
+            Assert.Equal(EXPECTED_NUMER, _mockRepo._capsuleInformatives.Count);
         }
 
         [Fact]
         public void Test_Delete_WithNullId_ShouldThrowException()
         {
-            var response = _signalementController.Delete(null);
+            var response = _capsuleInformativesController.Delete(null);
             Assert.IsType<NotFoundResult>(response.Result);
         }
 
@@ -78,15 +79,15 @@ namespace Gotham3.UnitTests
         [Fact]
         public void Test_Details_WithNullId_ShouldThrowException()
         {
-            var response = _signalementController.Details(null);
+            var response = _capsuleInformativesController.Details(null);
             Assert.IsType<NotFoundResult>(response.Result);
         }
 
         [Fact]
         public void Test_Details_WithHigherIdThanProjects_ShouldThrowException()
         {
-            int ANY_HIGHER_NUMBER = _mockRepo._signalements.Count + 1;
-            var response = _signalementController.Details(ANY_HIGHER_NUMBER);
+            int ANY_HIGHER_NUMBER = _mockRepo._capsuleInformatives.Count + 1;
+            var response = _capsuleInformativesController.Details(ANY_HIGHER_NUMBER);
             Assert.IsType<NotFoundResult>(response.Result);
         }
 
@@ -97,10 +98,10 @@ namespace Gotham3.UnitTests
             const int ANY_ID = 1;
 
             //Act
-            var result = await _signalementController.Details(ANY_ID) as ViewResult;
+            var result = await _capsuleInformativesController.Details(ANY_ID) as ViewResult;
 
             //Assert
-            Assert.IsAssignableFrom<Signalement>(result.Model);
+            Assert.IsAssignableFrom<CapsuleInformative>(result.Model);
         }
     }
 }

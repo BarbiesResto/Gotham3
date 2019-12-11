@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Gotham3.domain.Alerte>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Liste des alertes</h1>
+
+<p>
+    <a asp-action="Create">Créer une alerte!</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th id="NatureLabel">
+                Nature de l'évènement
+            </th>
+            <th id="SectorLabel">
+                Secteur
+            </th>
+            <th id="RiskLabel">
+                Risques encourus
+            </th>
+            <th id="RessourceLabel">
+                Ressources à la disposition
+            </th>
+            <th id="AdviceLabel">
+                Conseils
+            </th>
+            <th id="PublishedLabel">
+                Publiée
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Event_Nature)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sector)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Risk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ressource)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Advice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Modifier</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Détails</a> |
+                @if (item.Status == Status.Attente)
+                {
+                    <a asp-action="Publish" asp-route-id="@item.Id" id="PublierButton">Publier</a>
+                }
+                else
+                {
+                    <a asp-action="Publish" asp-route-id="@item.Id" id="DepublierButton">Dépublier</a>
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
