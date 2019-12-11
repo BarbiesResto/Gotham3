@@ -7,7 +7,7 @@ COPY ./ ./
 RUN dotnet publish ./Gotham3 -c Release -o out
 RUN dotnet test ./Gotham3/Gotham3.UnitTests
 
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.0 AS runtime
+FROM mcr.microsoft.com/dotnet/core/sdk:3.0 AS runtime
 
 WORKDIR /app
 
