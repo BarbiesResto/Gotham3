@@ -11,7 +11,7 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.0 AS runtime
 
 WORKDIR /app
 
-COPY --from=build ./app/Gotham3/out .
+COPY --from=build ./app/out .
 
 EXPOSE 6002
 
