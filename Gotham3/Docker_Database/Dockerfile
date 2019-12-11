@@ -11,6 +11,7 @@ ENV ACCEPT_EULA=Y
 #   Note :  On devra faire un chmod +x sur le fichier run.sh
 COPY ./Gotham3/Docker_Database/script.sql ./Gotham3/Docker_Database/
 COPY ./Gotham3/Docker_Database/run.sh ./Gotham3/Docker_Database/
+USER root 
 RUN chmod +x ./Gotham3/Docker_Database/script.sql
 RUN chmod +x ./Gotham3/Docker_Database/run.sh
 #3) Faire en sorte que le fichier run.sh soit exécuté (le shell est "sh")
