@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Gotham3.domain.Nouvelle>
+
+@{
+    ViewData["Title"] = "Nouvelles";
+}
+
+<h1 align="center">Nouvelles</h1>
+
+<p align="right">
+    <a asp-action="Create">Ajouter une nouvelle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th id="Title">
+                Titre
+            </th>
+            <th id="Text">
+                Texte de la nouvelle
+            </th>
+            <th id="link">
+                Lien du média
+            </th>
+            <th id="Status">
+                Status
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Text_Desc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Link_Media)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Modifier</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Détails</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Supprimer</a> |
+                @if (item.Status == Status.Attente)
+                {
+                    <a asp-action="Publish" asp-route-id="@item.Id">Publier</a>
+                }
+                else
+                {
+                    <a asp-action="Publish" asp-route-id="@item.Id">Dépublier</a>
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

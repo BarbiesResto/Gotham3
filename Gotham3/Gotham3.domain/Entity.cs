@@ -16,4 +16,10 @@ namespace Gotham3.domain
         public int Id { get; set; }
         public Status Status { get; set; }
     }
+  
+    public enum Status
+    {
+        Attente,
+        Publiée
+    }
 }
