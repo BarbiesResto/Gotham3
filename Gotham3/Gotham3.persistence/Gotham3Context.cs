@@ -11,7 +11,8 @@ namespace Gotham3.persistence
         {
         }
 
-        public DbSet<Signalement> Signalement { get; set; }
+        public DbSet<Signalement> Signalement { get; set; }  
+        public DbSet<Alerte> Alerte { get; set; }
         public DbSet<Sinistre> Sinistre { get; set; }
         public DbSet<CapsuleInformative> CapsuleInformative { get; set; }
         public DbSet<Nouvelle> Nouvelle { get; set; }
@@ -24,12 +25,21 @@ namespace Gotham3.persistence
                 .HasConversion(
                     v => v.ToString(),
                     v => (Status)Enum.Parse(typeof(Status), v));
+
+            modelBuilder
+                .Entity<Alerte>()
+                .Property(p => p.Status)
+                .HasConversion(
+                    v => v.ToString(),
+                    v => (Status)Enum.Parse(typeof(Status), v));
+
             modelBuilder
                 .Entity<CapsuleInformative>()
                 .Property(p => p.Status)
                 .HasConversion(
                     v => v.ToString(),
                     v => (Status)Enum.Parse(typeof(Status), v));
+                    
             modelBuilder
                 .Entity<Sinistre>()
                 .Property(p => p.Status)

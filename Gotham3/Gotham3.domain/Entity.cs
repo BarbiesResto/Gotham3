@@ -3,6 +3,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Gotham3.domain
 {
+    public enum Status
+    {
+        Attente,
+        Publiée
+    }
+
     public class Entity
     {
         [Key]

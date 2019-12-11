@@ -67,7 +67,6 @@ namespace Gotham3.persistence
             {
                 var dbContext = scope.ServiceProvider.GetRequiredService<Gotham3Context>();
                 dbContext.Update(entity);
-
                 await dbContext.SaveChangesAsync();
             }
         }
