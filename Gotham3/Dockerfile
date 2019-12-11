@@ -1,0 +1,17 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:3.0 AS build
+
+WORKDIR /app
+
+COPY ./ ./
+
+RUN dotnet publish ./Gotham3 -c Release -o out
+RUN dotnet test ./Gotham3/Gotham3.UnitTests
+RUN dotnet test ./Gotham3/Gotham3.AcceptanceTests
+
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.0 AS runtime
+
+WORKDIR /app
+
+COPY --from=build ./app/out .
+
+ENTRYPOINT ["dotnet" , "Gotham3.dll"]
