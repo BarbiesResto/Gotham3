@@ -1,10 +1,16 @@
 language: csharp
 branches:
   only:
-    - Test
+    - Staging
 mono: none
 dotnet: 3.0
 services:
     - docker
 script:
-    - docker build -f ./Gotham3/Dockerfile .
+      - docker build -f ./Gotham3/Dockerfile -t barbiesresto/Gotham3:app .
+      - docker build -f ./Gotham3/Docker_Database/Dockerfile -t barbiesresto/Gotham3:db .
+deploy:
+  provider: script
+  script: bash ./Gotham3/Docker_Database/push.sh
+  on:
+    branch: Staging
