@@ -8,10 +8,10 @@ using Xunit;
 namespace Gotham3.AcceptanceTests
 {
     [Story(
-        Title="Je veux pouvoir publier une prévention de sinistre",
-        AsA="Utilisateur général",
-        IWant="publier une prévention de sinistre",
-        SoThat="préparer les citoyens à réagir.")]
+        Title="Je veux pouvoir publier une prevention de sinistre",
+        AsA="Utilisateur general",
+        IWant="publier une prevention de sinistre",
+        SoThat="preparer les citoyens à reagir.")]
 
     public class SinistresAcceptanceTests : AcceptanceTestsBase
     {
@@ -44,14 +44,14 @@ namespace Gotham3.AcceptanceTests
 
         private void L_information_concernant_le_sinistre_s_affiche()
         {
-            // Titre, texte de la prévention, mois visé, statut
+            // Titre, texte de la prevention, mois vise, statut
             Assert.Contains(_sinistre.Title, _htmlPageContent);
             Assert.Contains(_sinistre.Description, _htmlPageContent);
             Assert.Contains(_sinistre.Month, _htmlPageContent);
             Assert.Contains(_sinistre.Status.ToString(), _htmlPageContent);
 
             //Accessible en tout temps
-            Assert.Contains("Préventions", _htmlPageContent);
+            Assert.Contains("Preventions", _htmlPageContent);
         }
     }
 }
